@@ -1,0 +1,51 @@
+Backtracking vs. Dynamic Programming
+Both backtracking and dynamic programming are powerful problem-solving techniques, but they're suited for different types of problems. Here's when to use each:
+When to Use Backtracking
+Finding All Possible Solutions: When you need to enumerate all possible solutions or configurations
+Example: Generate all possible subsets, permutations, or combinations
+Example: N-Queens problem, Sudoku solver
+2. Decision Problems with No Clear Optimization Function: When you need to make a series of choices without a clear way to optimize
+Example: Maze solving, word search in a grid
+Constraint Satisfaction Problems: When you need to find solutions that satisfy specific constraints
+Example: Graph coloring, cryptarithmetic puzzles
+When Greedy Approach Fails: When locally optimal choices don't lead to a globally optimal solution
+Example: Traveling salesman problem (finding all possible tours)
+When to Use Dynamic Programming
+Optimization Problems: When you need to find the maximum/minimum value
+Example: Longest common subsequence, knapsack problem
+Problems with Overlapping Subproblems: When the same subproblems are solved multiple times
+Example: Fibonacci sequence, matrix chain multiplication
+Problems with Optimal Substructure: When optimal solutions to subproblems lead to optimal solutions for the overall problem
+Example: Shortest path problems, edit distance
+Counting Problems: When you need to count the number of ways to do something
+Example: Count paths in a grid, coin change problem (number of ways)
+Key Differences
+Approach:
+Backtracking explores all possibilities and abandons paths that can't lead to solutions
+DP breaks problems into subproblems and stores their solutions to avoid recomputation
+Time Complexity:
+Backtracking is often exponential (explores all possibilities)
+DP is typically polynomial when applicable (reuses computed results)
+Memory Usage:
+Backtracking uses recursion stack space
+DP uses additional memory to store subproblem solutions
+Problem Type:
+Backtracking: "Find all ways to..." or "Is there a way to..."
+DP: "Find the best way to..." or "Count the number of ways to..."
+In practice, some problems can be solved with either approach, but one will be more efficient than the other depending on the problem's characteristics.
+
+def backtrack(state):
+    if is_valid_solution(state):
+        # 1. Base Case
+        solutions.append(state.copy())  # Save solution
+        return
+
+    for choice in get_possible_choices(state):
+        # 2. Make a choice
+        state.add(choice)
+
+        # 3. Recurse with new state
+        backtrack(state)
+
+        # 4. Undo choice (backtrack)
+        state.remove(choice)
