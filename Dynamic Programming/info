@@ -1,0 +1,9 @@
+dynamic programming 
+
+1. first write your base case
+2. then define the recurrence relation
+
+builds solution by:
+Using previous solutions (subproblems)
+Making optimal choice at each step
+Storing results to avoid recalculation

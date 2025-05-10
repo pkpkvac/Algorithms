@@ -1,0 +1,67 @@
+A Heap is a complete binary tree with a special property:
+// Max Heap: Parent always larger than children
+       100
+      /   \
+     80    70
+    /  \   /
+   50  60 65
+
+// Min Heap: Parent always smaller than children
+        10
+      /    \
+     30     20
+    /  \    /
+   50   40 25
+
+A heap is typically implemented using an array, 
+but it REPRESENTS a complete binary tree implicitly. Here's how:
+
+Array:    [10, 8, 9, 4, 5, 6]
+Indices:   0  1  2  3  4  5
+
+Represents this tree:
+       10
+      /  \
+     8    9
+    / \  /
+   4   5 6
+
+For any index i:
+- Left child: 2i + 1
+- Right child: 2i + 2
+- Parent: (i-1) // 2
+
+Key Operations:
+class MaxHeap {
+    insert(val): void {     // O(log n)
+        // Add at end
+        // Bubble up until heap property restored
+    }
+    
+    extractMax(): number {  // O(log n)
+        // Take root
+        // Move last element to root
+        // Bubble down until heap property restored
+    }
+    
+    peek(): number {       // O(1)
+        // Just look at root
+    }
+}
+
+Common Use Cases:
+Priority Queues
+Kth largest/smallest elements
+Merge K sorted lists
+Running median
+Task schedulers
+
+Why Efficient?
+// For Kth largest:
+1. Build heap of size k     // O(k)
+2. For remaining n-k:       // O((n-k)log k)
+   - If larger than heap min
+   - Replace heap min
+   
+Total: O(n log k)
+vs Array: O(n²)

@@ -1,0 +1,28 @@
+BREADTH FIRST SEARCH STRATEGIES (QUEUE)
+
+1. Standard Level Order (left to right)
+   - Visit: 1 → 2,3 → 4,5,6
+   - Uses queue
+   - Most common BFS approach
+
+DEPTH FIRST SEARCH STRATEGIES (STACK)
+
+1. Preorder (root → left → right)
+   - Visit: 1 → 2 → 4 → 5 → 3 → 6
+   - Goes deep left first
+   - Root processed before children
+
+2. Inorder (left → root → right)
+   - Visit: 4 → 2 → 5 → 1 → 3 → 6
+   - Goes deep left first
+   - Root processed between subtrees
+   - Gives sorted order for BST
+
+3. Postorder (left → right → root)
+   - Visit: 4 → 5 → 2 → 6 → 3 → 1
+   - Goes deep left first
+   - Root processed after children
+   - Good for:
+     * Computing heights
+     * Deletion
+     * Child-before-parent problems
