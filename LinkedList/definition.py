@@ -48,4 +48,4 @@ def print_linked_list(node):
         result.append(node.val)
         node = node.next
     
-    return result 
+    return print(result)
