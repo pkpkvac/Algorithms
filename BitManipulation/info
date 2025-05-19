@@ -1,0 +1,16 @@
+Common Bit Manipulation Interview Questions:
+Count number of set bits (the problem you're working on)
+Determine if a number is a power of 2
+Find the single number in an array where all other numbers appear twice
+Reverse bits of an integer
+Add two integers without using arithmetic operators
+Find the missing number using XOR
+
+Learn the basic operations: AND, OR, XOR, NOT, shifts
+Understand common bit manipulation tricks:
+Isolating the rightmost bit: n & -n
+Clearing the rightmost bit: n & (n-1)
+Setting the i-th bit: n | (1 << i)
+Checking if i-th bit is set: (n & (1 << i)) != 0
+Practice visualizing binary representations of numbers
+While these questions aren't as common as array or string problems, they do appear regularly enough that it's worth being prepared for them, especially for roles that might involve performance optimization or systems programming.
