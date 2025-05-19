@@ -14,3 +14,9 @@ Setting the i-th bit: n | (1 << i)
 Checking if i-th bit is set: (n & (1 << i)) != 0
 Practice visualizing binary representations of numbers
 While these questions aren't as common as array or string problems, they do appear regularly enough that it's worth being prepared for them, especially for roles that might involve performance optimization or systems programming.
+
+Understand common bit manipulation tricks:
+Isolating the rightmost bit: n & -n
+Clearing the rightmost bit: n & (n-1)
+Setting the i-th bit: n | (1 << i)
+Checking if i-th bit is set: (n & (1 << i)) != 0

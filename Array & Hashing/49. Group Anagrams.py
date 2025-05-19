@@ -54,6 +54,33 @@ class Solution:
         print(letter_freq)
         return list(letter_freq.values())
 
+    def group_anagrams(self, strs: List[str]) -> List[List[str]]:
+        # Dictionary to store groups of anagrams
+        anagram_groups = {}
+        
+        for s in strs:
+            # Create a count array for 26 lowercase letters
+            char_count = [0] * 26
+            
+            # Count frequency of each character in the string
+            for char in s:
+                # Convert character to index (a->0, b->1, etc.)
+                char_index = ord(char) - ord('a')
+                char_count[char_index] += 1
+            
+            # Convert the count array to a tuple to use as dictionary key
+            # (lists can't be keys in dictionaries because they're mutable)
+            count_tuple = tuple(char_count)
+            
+            # Add the string to its anagram group
+            if count_tuple in anagram_groups:
+                anagram_groups[count_tuple].append(s)
+            else:
+                anagram_groups[count_tuple] = [s]
+
+        # Return all the anagram groups
+        return list(anagram_groups.values())
+
 
 strs = ["eat","tea","tan","ate","nat","bat"]    
     
