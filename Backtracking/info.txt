@@ -1,6 +1,9 @@
 Backtracking vs. Dynamic Programming
 Both backtracking and dynamic programming are powerful problem-solving techniques, but they're suited for different types of problems. Here's when to use each:
+
+
 When to Use Backtracking
+-------------------------------
 Finding All Possible Solutions: When you need to enumerate all possible solutions or configurations
 Example: Generate all possible subsets, permutations, or combinations
 Example: N-Queens problem, Sudoku solver
@@ -10,7 +13,10 @@ Constraint Satisfaction Problems: When you need to find solutions that satisfy s
 Example: Graph coloring, cryptarithmetic puzzles
 When Greedy Approach Fails: When locally optimal choices don't lead to a globally optimal solution
 Example: Traveling salesman problem (finding all possible tours)
+
+
 When to Use Dynamic Programming
+-------------------------------
 Optimization Problems: When you need to find the maximum/minimum value
 Example: Longest common subsequence, knapsack problem
 Problems with Overlapping Subproblems: When the same subproblems are solved multiple times
