@@ -3,39 +3,13 @@ dynamic programming
 1. first write your base case
 2. then define the recurrence relation
 
-builds solution by:
-Using previous solutions (subproblems)
-Making optimal choice at each step
-Storing results to avoid recalculation
+Tabulation (Bottom-up): "Build a table from small to big"
+Start: "I know T(0), T(1), T(2)"
+Build: "Now I can find T(3), then T(4)..."
+Like climbing stairs step by step
 
-Implementation Approaches
-Top-Down vs Bottom-Up Dynamic Programming: A Clear Distinction
-Let me clarify the difference between top-down and bottom-up approaches in dynamic programming using the Min Cost Climbing Stairs problem:
-Top-Down Approach (Memoization)
-
-1. Direction: Starts from the main problem and breaks it down into subproblems
-   Implementation: Uses recursion with memoization
-   Execution Flow: Solves problems as needed and caches results
-   Metaphor: "I need to know the answer to the whole problem, which depends on smaller problems"
-   )
-   Visualization: Think of it as starting at the beginning of the staircase and asking "What's the minimum cost from here?" and working your way up by breaking down the problem.
-   Bottom-Up Approach (Tabulation)
-   Direction: Starts from the smallest subproblems and builds up to the main problem
-   Implementation: Uses iteration and an array/table
-   Execution Flow: Systematically solves all subproblems in a specific order
-   Metaphor: "I'll solve all the small problems first, then use those solutions to build up to the big problem"
-   )
-   Visualization: Think of it as starting at the end of the staircase and working backwards, filling in the minimum cost for each step until you reach the beginning.
-   Key Differences
-1. Control Flow:
-   Top-down: Recursive (call stack)
-   Bottom-up: Iterative (for/while loops)
-   Order of Computation:
-   Top-down: Computes only necessary subproblems, potentially skipping some
-   Bottom-up: Computes all subproblems in a predetermined order
-   Memory Usage:
-   Top-down: Uses call stack + memoization table
-   Bottom-up: Uses only the DP table
-   Ease of Implementation:
-   Top-down: Often more intuitive to implement (follows the problem statement)
-   Bottom-up: Sometimes requires more careful thinking about the order of computation
+Memoization (Top-down): "Ask the question, then find what you need"
+Start: "I want T(n)"
+Ask: "What do I need?" → T(n-1), T(n-2), T(n-3)
+Keep asking until you reach known answers
+Like asking for help from smaller problems
