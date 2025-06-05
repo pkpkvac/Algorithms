@@ -1,4 +1,18 @@
 
+My Learning Recommendation:
+
+Phase 1 (Now): Master Graph Fundamentals
+DFS/BFS traversal
+Connected components
+Cycle detection
+Topological sort
+
+Phase 2 (Later): Advanced Patterns
+Union-Find
+Dijkstra's algorithm
+Advanced DP on graphs
+
+
 When you see:
 1. Dependencies (A needs B)
 2. Connections between items
