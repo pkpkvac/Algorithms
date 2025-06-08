@@ -1,0 +1,39 @@
+1. Single Moving Variable Pattern ✅
+   Yes! Most interval problems use one tracking variable - typically the boundary of the last processed interval.
+   Apply to info
+   boundary
+   Why this works: After sorting, you only need to compare with the immediate previous interval, not all previous ones.
+
+2. Start Time vs End Time - Decision Framework
+   Here's the key insight for when to sort by which:
+   Sort by END TIME when:
+
+Goal: Maximize number of intervals (activity selection)
+Examples:
+Non-overlapping intervals (our current problem)
+Meeting room scheduling
+Activity selection
+Logic: Keep intervals that end earliest → leaves most room for future intervals
+Sort by START TIME when:
+
+Goal: Process intervals in chronological order or merge them
+Examples:
+Merge overlapping intervals
+Insert new interval
+Meeting room allocation (tracking what's happening)
+Logic: Process intervals in the order they begin → natural chronological flow
+Visual Comparison
+Example intervals: [[1,4], [2,3], [3,5]]
+Sorted by END time (for non-overlapping):
+Apply to info
+5
+Goal: Pick maximum number → Pick [2,3] and [3,5] (remove [1,4])
+Sorted by START time (for merging):
+Apply to info
+5
+Goal: Merge chronologically → [1,4] + [2,3] → [1,4], then [1,4] + [3,5] → [1,5]
+Quick Decision Rule
+Ask yourself:
+"Do I want to fit the maximum number of intervals?" → Sort by END time
+"Do I want to process intervals as they start?" → Sort by START time
+Your current problem (non-overlapping): We want maximum intervals, so END time sorting is perfect!
