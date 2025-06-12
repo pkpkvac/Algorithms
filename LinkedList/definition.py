@@ -4,6 +4,13 @@ class ListNode:
         self.val = val
         self.next = next
 
+
+class DoublyLinkedNode:
+    def __init__(self, val=0, prev= None, next= None):
+        self.val = val
+        self.next = next
+        self.prev = prev
+
 def create_linked_list(input_arr):
     """
     Creates a linked list from an array of values.
