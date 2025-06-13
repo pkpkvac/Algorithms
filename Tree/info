@@ -1,5 +1,11 @@
 BREADTH FIRST SEARCH STRATEGIES (QUEUE)
 
+	    1
+	  /   \
+	 2     3
+	/ \   /
+ 4  5  6
+
 1. Standard Level Order (left to right)
    - Visit: 1 → 2,3 → 4,5,6
    - Uses queue
