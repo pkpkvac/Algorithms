@@ -1,0 +1,29 @@
+TEMPLATE EXAMPLE: NetworkDelayTime.py
+
+What Dijkstra Does:
+Finds the shortest path from a starting point to all other points in a graph.
+Real-Life Analogy:
+Imagine you're at a bus station with routes to different cities:
+Goal: Find cheapest way to reach every city
+Method: Always explore the cheapest unvisited destination first
+Keep track: Minimum cost to reach each city so far
+
+1. Start at source, distance = 0
+2. Put all other nodes at distance = infinity
+3. While there are unvisited nodes:
+   a. Pick unvisited node with smallest distance
+   b. Look at all its neighbors
+   c. Update their distances if you found a shorter path
+   d. Mark current node as visited
+
+   A--2--B
+   | |
+   1 3
+   | |
+   C--1--D
+
+Start at A, want shortest path to D:
+Step 1: A(0) → C(1), B(2)
+Step 2: From C → D(2) [1+1]
+Step 3: From B → D(5) [2+3], but 2 < 5, so keep D(2)
+Answer: A→C→D = distance 2
