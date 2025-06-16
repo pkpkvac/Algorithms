@@ -1,5 +1,30 @@
 
+🔑 The ONE Question That Decides Everything:
+"Do different edges have different weights?"
 
+YES → Use Dijkstra:
+Network Delay Time: Different travel times between nodes (1ms, 4ms, etc.)
+Path with Minimum Effort: Different costs for height differences
+Cheapest Flights: Different flight prices
+Keywords: "minimum cost", "minimum time", "weighted edges"
+
+NO → Use BFS:
+Binary Matrix Path: All moves cost 1 step
+Word Ladder: All word transformations cost 1 step
+Rotting Oranges: All infections take 1 minute
+Keywords: "minimum steps", "shortest path" + equal weights
+
+🧠 The Mental Model:
+Think of it like transportation:
+BFS = City bus system
+All stops cost $2.50 (equal weight)
+Just count stops to destination
+Simple queue works perfectly
+
+Dijkstra = Uber/taxi system
+Different routes cost different amounts (weighted)
+Need to track cheapest route so far
+Priority queue required to always explore cheapest option first
 
 My Learning Recommendation:
 
