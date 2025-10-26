@@ -2,5 +2,6 @@
 	"[python]": {
 		"editor.tabSize": 4,
 		"editor.insertSpaces": true
-	}
+	},
+	"importCost.javascriptExtensions": ["\\.jsx?$"]
 }
