@@ -1,0 +1,26 @@
+<!-- Sliding window pattern -->
+
+function slidingWindowExample(arr: number[]): void {
+let left = 0;
+let right = 0;
+let windowProperty = 0; // Could be sum, count, etc.
+
+    while (right < arr.length) {
+        // Add element at right to window
+        windowProperty += arr[right];
+
+        // Contract window from left if needed
+        while (someConditionIsMet) {
+            // Remove element at left from window
+            windowProperty -= arr[left];
+            left++;
+        }
+
+        // Update result based on current window
+        // ...
+
+        // Expand window
+        right++;
+    }
+
+}

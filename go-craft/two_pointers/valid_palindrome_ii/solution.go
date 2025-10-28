@@ -1,26 +1,38 @@
 package validpalindromeii
 
-import (
-	"errors"
-	"fmt"
-	"strings"
-)
+import "errors"
 
 func ValidPalindromeII(s string) (bool, error) {
 
-	// handle empty string, spaces, numbers, or capitalized characters
-	if len(s) == 0 || strings.ContainsAny(s, " ") || strings.ContainsAny(s, "0123456789") || strings.ContainsAny(s, "ABCDEFGHIJKLMNOPQRSTUVWXYZ") {
-		return false, errors.New("invalid input")
+	// Input validation
+	if len(s) == 0 {
+		return false, errors.New("empty string")
 	}
 
+	// Only allow lowercase English letters as per problem constraints
+	for _, char := range s {
+		if char < 'a' || char > 'z' {
+			return false, errors.New("string must contain only lowercase English letters")
+		}
+	}
+
+	l := 0
 	r := len(s) - 1
+	var res bool
 
-	for l := 0; l < r; l++ {
+	for l < r {
 
-		fmt.Printf("Val%c\n", s[l])
+		if s[l] == s[r] {
+			r--
+			l++
+		} else {
+			res = isPalindrome(s, l+1, r) || isPalindrome(s, l, r-1)
+			return res, nil
+		}
 
 	}
 
+	return true, nil
 	// 	Hint
 	// Either skip one character from left
 
@@ -36,5 +48,16 @@ func ValidPalindromeII(s string) (bool, error) {
 
 	// If the main loop finishes without finding any mismatches, the string is already a palindrome, so we return true.
 
-	return true, nil
+}
+
+func isPalindrome(s string, l int, r int) bool {
+
+	for l < r {
+		if s[l] != s[r] {
+			return false
+		}
+		r--
+		l++
+	}
+	return true
 }
