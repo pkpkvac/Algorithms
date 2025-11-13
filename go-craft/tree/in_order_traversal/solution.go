@@ -1,7 +1,7 @@
 package inordertraversal
 
 import (
-	"algorithms/binary_tree/common"
+	"algorithms/tree/common"
 )
 
 func InorderTraversalRecursive(root *common.TreeNode) []int {

@@ -17,7 +17,7 @@ func TestIsValid(t *testing.T) {
 			expected: true,
 		},
 		{
-			name:     "false case",
+			name:     "false case missing bracket",
 			input:    "([)",
 			expected: false,
 		},
@@ -27,7 +27,7 @@ func TestIsValid(t *testing.T) {
 			expected: true,
 		},
 		{
-			name:     "false case",
+			name:     "false case 1 bracket",
 			input:    "(]",
 			expected: false,
 		},
@@ -37,9 +37,9 @@ func TestIsValid(t *testing.T) {
 			expected: true,
 		},
 		{
-			name:     "false case",
+			name:     "false case 3 bracket",
 			input:    "([{}]]",
-			expected: true,
+			expected: false,
 		},
 	}
 

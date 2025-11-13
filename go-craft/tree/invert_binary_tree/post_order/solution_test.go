@@ -1,4 +1,4 @@
-package inordertraversal
+package invertbinarytree
 
 import (
 	"algorithms/tree/common"
@@ -6,44 +6,44 @@ import (
 	"testing"
 )
 
-func TestInorderTraversal(t *testing.T) {
+func TestInvertBinaryTree(t *testing.T) {
 
 	tests := []struct {
 		name     string
 		root     *common.TreeNode
-		expected []int
+		expected *common.TreeNode
 	}{
 		{
 			name:     "leetcode example 1",
 			root:     common.CreateBinaryTree([]int{1, 2, 3, 4, 5, 6, 7}),
-			expected: []int{4, 2, 5, 1, 6, 3, 7},
+			expected: common.CreateBinaryTree([]int{1, 3, 2, 7, 6, 5, 4}),
 		},
 		{
 			name:     "leetcode example 2",
-			root:     common.CreateBinaryTree([]int{1, 2, 3, -999, 4, 5, -999}),
-			expected: []int{2, 4, 1, 5, 3},
+			root:     common.CreateBinaryTree([]int{3, 2, 1}),
+			expected: common.CreateBinaryTree([]int{3, 1, 2}),
 		},
 		{
 			name:     "empty tree",
 			root:     nil,
-			expected: []int{},
+			expected: nil,
 		},
 	}
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			result := InorderTraversalRecursive(tt.root)
+			result := invertTreeRecursive(tt.root)
 			if !reflect.DeepEqual(result, tt.expected) {
-				t.Errorf("InorderTraversal() = %v, want %v", result, tt.expected)
+				t.Errorf("invertTreeRecursive() = %v, want %v", result, tt.expected)
 			}
 		})
 	}
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			result := InorderTraversalIterative(tt.root)
+			result := invertTreeIterative(tt.root)
 			if !reflect.DeepEqual(result, tt.expected) {
-				t.Errorf("InorderTraversal() = %v, want %v", result, tt.expected)
+				t.Errorf("invertTreeIterative() = %v, want %v", result, tt.expected)
 			}
 		})
 	}
@@ -64,21 +64,21 @@ func buildCompleteTree(n int) *common.TreeNode {
 	return common.CreateBinaryTree(vals)
 }
 
-func BenchmarkInorderTraversalRecursive(b *testing.B) {
+func BenchmarkInvertTreeRecursive(b *testing.B) {
 	// Use a reasonably large complete tree
 	root := buildCompleteTree(2047) // height ~11
 	b.ReportAllocs()
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
-		_ = InorderTraversalRecursive(root)
+		_ = invertTreeRecursive(root)
 	}
 }
 
-func BenchmarkInorderTraversalIterative(b *testing.B) {
+func BenchmarkInvertTreeIterative(b *testing.B) {
 	root := buildCompleteTree(2047)
 	b.ReportAllocs()
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
-		_ = InorderTraversalIterative(root)
+		_ = invertTreeIterative(root)
 	}
 }

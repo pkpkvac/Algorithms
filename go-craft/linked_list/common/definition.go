@@ -16,6 +16,9 @@ func NewListNodeWithNext(val int, next *ListNode) *ListNode {
 }
 
 func CreateLinkedList(nums []int) *ListNode {
+	if len(nums) == 0 {
+		return nil
+	}
 	head := NewListNode(nums[0])
 	current := head
 	for i := 1; i < len(nums); i++ {
