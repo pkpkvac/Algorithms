@@ -18,8 +18,8 @@ func TestLengthOfLongestSubstring(t *testing.T) {
 		},
 		{
 			name:     "leetcode example 2",
-			s:        "xxxx",
-			expected: 1,
+			s:        "pwwkew",
+			expected: 3,
 		},
 	}
 
