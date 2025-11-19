@@ -31,7 +31,8 @@ func CreateLinkedList(nums []int) *ListNode {
 func PrintLinkedList(head *ListNode) {
 	current := head
 	for current != nil {
-		fmt.Println(current.Val)
+		fmt.Printf("%d", current.Val)
 		current = current.Next
 	}
+	fmt.Println()
 }
