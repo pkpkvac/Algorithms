@@ -2,6 +2,7 @@ package topkfrequentelements
 
 import (
 	"container/heap"
+	"sort"
 )
 
 type PairHeap []Pair
@@ -65,6 +66,54 @@ func topKFrequentHeap(nums []int, k int) []int {
 
 func topKFrequentBucketSort(nums []int, k int) []int {
 
-	return []int{}
+	// use bucket sort, the trick is
+	// the bucket is an array of items
+	// that contain that frequency
+	// we know an element cannot occur more
+	// than len(nums) times
+
+	// first use a map to store the frequencies
+	// then group the entries based on frequencies
+	res := []int{}
+	m := map[int]int{}
+	n := len(nums)
+
+	for _, val := range nums {
+		m[val]++
+	}
+
+	// create the buckets we're going to group into.
+	// 1 indexed
+	b := make([][]int, len(nums)+1)
+
+	// populate buckets
+	for key, value := range m {
+		bucket := b[value]
+		bucket = append(bucket, key)
+		b[value] = bucket
+	}
+
+	for n > 0 && len(res) < k {
+
+		bucket := b[n]
+
+		for _, val := range bucket {
+
+			if len(res) == k {
+				break
+			}
+			res = append(res, val)
+
+		}
+
+		n--
+	}
+
+	sort.Slice(res,
+		func(i, j int) bool {
+			return res[i] < res[j]
+		})
+
+	return res
 
 }
