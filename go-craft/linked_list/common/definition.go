@@ -81,3 +81,13 @@ func PrintLinkedList(head *ListNode) {
 	}
 	fmt.Println()
 }
+
+func ListsEqual(list1 *ListNode, list2 *ListNode) bool {
+	if list1 == nil && list2 == nil {
+		return true
+	}
+	if list1 == nil || list2 == nil {
+		return false
+	}
+	return list1.Val == list2.Val && ListsEqual(list1.Next, list2.Next)
+}
