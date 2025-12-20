@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-func TestSumOfAllSubsetsXORTotal(t *testing.T) {
+func TestSubsetXORTotal(t *testing.T) {
 
 	tests := []struct {
 		name     string
@@ -25,7 +25,7 @@ func TestSumOfAllSubsetsXORTotal(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			result := subsetXORSum(tt.nums)
+			result := subsetXORTotal(tt.nums)
 			if result != tt.expected {
 				t.Errorf("subsetXORSum(%v) = %v, want %v", tt.nums, result, tt.expected)
 			}
