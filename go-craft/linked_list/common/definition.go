@@ -52,6 +52,31 @@ type ListNode struct {
 	Next *ListNode
 }
 
+type ListNodeWithRandom struct {
+	Val    int
+	Next   *ListNodeWithRandom
+	Random *ListNodeWithRandom
+}
+
+func ListNodeWithRandomEqual(list1 *ListNodeWithRandom, list2 *ListNodeWithRandom) bool {
+
+	if list1 == nil && list2 == nil {
+		return true
+	}
+	if list1 == nil || list2 == nil {
+		return false
+	}
+	return list1.Val == list2.Val && ListNodeWithRandomEqual(list1.Next, list2.Next) && ListNodeWithRandomEqual(list1.Random, list2.Random)
+}
+
+func NewListNodeWithRandom(val int, random *ListNodeWithRandom) *ListNodeWithRandom {
+	return &ListNodeWithRandom{Val: val, Next: nil, Random: random}
+}
+
+func NewListNodeWithNextAndRandom(val int, next *ListNodeWithRandom, random *ListNodeWithRandom) *ListNodeWithRandom {
+	return &ListNodeWithRandom{Val: val, Next: next, Random: random}
+}
+
 func NewListNode(val int) *ListNode {
 	return &ListNode{Val: val, Next: nil}
 }
