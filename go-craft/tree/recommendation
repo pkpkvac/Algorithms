@@ -1,15 +1,18 @@
 If you want a tree problem: Top picks from your list:
-  Problem: Binary Tree Level Order Traversal
-  Why: Foundational BFS - many problems build on this pattern
-  ────────────────────────────────────────
-  Problem: Validate Binary Search Tree
-  Why: Classic, very frequently asked
-  ────────────────────────────────────────
-  Problem: Kth Smallest Element in BST
-  Why: Common BST + inorder traversal
-  ────────────────────────────────────────
+
+
   Problem: Binary Tree Maximum Path Sum
   Why: Hard but very common at Google/Meta
-  My vote: Do Merge K Sorted Lists to wrap up linked lists cleanly, 
-	then hit Level Order Traversal as your tree foundation 
-	(it unlocks Right Side View, Zigzag, etc. for free).
+
+	On brute force path between two nodes:
+
+  brute force would be: for every pair of nodes, find the path between them and sum it.
+
+***  How to find path between two nodes:
+  1. Find their Lowest Common Ancestor (LCA)
+  2. Path = (A → LCA) + (LCA → B)
+
+  *** This is a real technique worth knowing, but it's O(n²) and overkill for this problem.
+	***
+	*** Learn this technique for the interview, but don't use it for this problem.
+	***
