@@ -26,7 +26,7 @@ func TestCanFinish(t *testing.T) {
 		},
 		{
 			name:          "leetcode example 3",
-			numCourses:    3,
+			numCourses:    4,
 			prerequisites: [][]int{{0, 1}, {1, 2}, {2, 0}, {0, 4}},
 			expected:      false,
 		},

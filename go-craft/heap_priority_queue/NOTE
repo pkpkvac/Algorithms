@@ -1,0 +1,13 @@
+Reorganize String — best next step
+Similar to Longest Happy String (greedy + heap to avoid consecutive characters)
+Straightforward pattern you already know
+Good warm-up before more complex problems
+
+Single Threaded CPU — second
+Similar to Task Scheduler (heap + time-based processing)
+Slightly more complex with start times
+Good follow-up after Reorganize String
+
+Design Twitter — save for later
+System design problem requiring multiple data structures
+More complex; better after the other two

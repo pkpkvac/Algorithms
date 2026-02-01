@@ -1,3 +1,25 @@
+Next 3 (in order):
+
+Rotting Oranges — second
+Multi-source BFS (different from grid DFS)
+Time-based propagation pattern
+Common interview problem
+
+Word Ladder — third
+BFS shortest path (not just traversal)
+String transformation pattern
+Very common interview problem
+
+Why this order:
+Course Schedule II reinforces what you just did
+Rotting Oranges introduces multi-source BFS
+Word Ladder teaches BFS shortest path
+You're not behind. You've covered:
+Grid DFS/BFS (Number of Islands, Max Area, Island Perimeter)
+Graph traversal (Clone Graph)
+Cycle detection (Course Schedule)
+That's a solid foundation. These next 3 will round out your graph toolkit.
+
 Tier 1 — Must know (core patterns):
 Number of Islands — Classic DFS/BFS on a grid. Foundation for many grid problems.
 Course Schedule — Topological sort (Kahn's algorithm or DFS). Common interview pattern.

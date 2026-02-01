@@ -1,0 +1,26 @@
+Recommended order:
+Combination Sum II — start here
+Builds on Combination Sum
+Adds handling duplicates (sort + skip duplicates)
+Good warm-up
+Permutations II — next
+Builds on Permutations
+Adds handling duplicates
+Similar pattern to Combination Sum II
+Combinations — third
+Similar to Subsets but with fixed size
+Reinforces the pattern
+Generate Parentheses — fourth
+Introduces a new pattern (valid parentheses generation)
+Uses backtracking with constraints (open/close counts)
+Common interview problem
+Word Search — fifth
+Introduces 2D grid backtracking
+Uses visited tracking and path exploration
+Important pattern for grid problems
+Why this order:
+First three build on what you know (duplicates, fixed size)
+Generate Parentheses introduces a new constraint pattern
+Word Search introduces 2D grid backtracking
+After these, tackle Palindrome Partitioning, Letter Combinations of a Phone Number, then the harder ones (Matchsticks to Square, Partition to K Equal Sum Subsets, N Queens, Word Break II).
+Start with Combination Sum II to reinforce the pattern with duplicates.
