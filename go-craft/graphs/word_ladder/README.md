@@ -19,8 +19,3 @@ Input: beginWord = "cat", endWord = "sag", wordList = ["bat","bag","sat","dag","
 
 Output: 0
 Explanation: There is no possible transformation sequence from "cat" to "sag" since the word "sag" is not in the wordList.
-
-Constraints:
-
-1 <= beginWord.length <= 10
-1 <= wordList.length <= 100

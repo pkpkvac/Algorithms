@@ -1,10 +1,3 @@
-Next 3 (in order):
-
-Rotting Oranges — second
-Multi-source BFS (different from grid DFS)
-Time-based propagation pattern
-Common interview problem
-
 Word Ladder — third
 BFS shortest path (not just traversal)
 String transformation pattern

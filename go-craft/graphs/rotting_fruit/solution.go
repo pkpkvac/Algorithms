@@ -6,6 +6,9 @@ type Coord struct {
 
 func rottingFruit(grid [][]byte) int {
 	rotters := []Coord{}
+	t := 0
+	// check 4 directions
+	directions := [][]int{{-1, 0}, {1, 0}, {0, -1}, {0, 1}}
 
 	for row := 0; row < len(grid); row++ {
 
@@ -21,79 +24,51 @@ func rottingFruit(grid [][]byte) int {
 
 		}
 	}
-}
 
-func numIslandsIterative(grid [][]byte) int {
-	islands := 0
+	for len(rotters) > 0 {
 
-	for i := 0; i < len(grid); i++ {
-		for j := 0; j < len(grid[i]); j++ {
-			if grid[i][j] == '1' {
-				islands++
-				dfsIterative(grid, i, j)
+		// the number of rotters in this round
+		layerSize := len(rotters)
+
+		for layerSize > 0 {
+			layerSize--
+			r := rotters[0]
+			rotters = rotters[1:]
+
+			for _, direction := range directions {
+
+				newRow := r.Row + direction[0]
+				newCol := r.Col + direction[1]
+
+				if newRow < 0 || newRow >= len(grid) || newCol < 0 || newCol >= len(grid[0]) || grid[newRow][newCol] == 0 {
+					continue
+				}
+
+				if grid[newRow][newCol] == 1 {
+					c := Coord{Row: newRow, Col: newCol}
+					grid[newRow][newCol] = 2
+					rotters = append(rotters, c)
+				}
 			}
 		}
-	}
 
-	return islands
-}
-
-// Recursive DFS approach
-func dfs(grid [][]byte, start_row int, start_col int) {
-	// job of this function is to zero the island if it's land,
-	// call in all 4 directions
-
-	if grid[start_row][start_col] == '0' {
-		// this is water, just return
-		return
-	}
-	// mark current cell as visited (water)
-	grid[start_row][start_col] = '0'
-
-	// check 4 directions
-	directions := [][]int{{-1, 0}, {1, 0}, {0, -1}, {0, 1}}
-	for _, direction := range directions {
-
-		newRow := start_row + direction[0]
-		newCol := start_col + direction[1]
-
-		if newRow < 0 || newRow >= len(grid) || newCol < 0 || newCol >= len(grid[0]) || grid[newRow][newCol] == '0' {
-			// nothing to do, out of range, or water
-			continue
+		// only count a minute when we actually spread to at least one new orange
+		if len(rotters) > 0 {
+			t++
 		}
-
-		dfs(grid, newRow, newCol)
 	}
 
-}
+	for row := 0; row < len(grid); row++ {
 
-// Iterative DFS approach using a stack
-func dfsIterative(grid [][]byte, start_row int, start_col int) {
-	stack := [][]int{{start_row, start_col}}
-	directions := [][]int{{-1, 0}, {1, 0}, {0, -1}, {0, 1}}
+		for col := 0; col < len(grid[row]); col++ {
 
-	for len(stack) > 0 {
-		// pop from stack
-		cell := stack[len(stack)-1]
-		stack = stack[:len(stack)-1]
-		row, col := cell[0], cell[1]
+			if grid[row][col] == 1 {
 
-		// skip if already visited or out of bounds
-		if row < 0 || row >= len(grid) || col < 0 || col >= len(grid[0]) || grid[row][col] == '0' {
-			continue
-		}
-
-		// mark as visited
-		grid[row][col] = '0'
-
-		// push all valid neighbors onto stack
-		for _, direction := range directions {
-			newRow := row + direction[0]
-			newCol := col + direction[1]
-
-			if newRow >= 0 && newRow < len(grid) && newCol >= 0 && newCol < len(grid[0]) && grid[newRow][newCol] == '1' {
-				stack = append(stack, []int{newRow, newCol})
+				return -1
 			}
+
 		}
 	}
+
+	return t
 }
