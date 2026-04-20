@@ -1,6 +1,4 @@
 Start
-Lemonade Change (Easy) – Simple “do we have change?” greedy. Good warm-up.
-Jump Game (Medium) – “Max reach” as you scan. Very common and reusable pattern.
 Maximum Subarray (Medium) – Kadane’s algorithm: one pass, track current sum and best sum. Another classic.
 
 Next

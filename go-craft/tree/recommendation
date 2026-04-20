@@ -1,18 +1,6 @@
-If you want a tree problem: Top picks from your list:
-
-
-  Problem: Binary Tree Maximum Path Sum
-  Why: Hard but very common at Google/Meta
-
-	On brute force path between two nodes:
-
-  brute force would be: for every pair of nodes, find the path between them and sum it.
-
-***  How to find path between two nodes:
-  1. Find their Lowest Common Ancestor (LCA)
-  2. Path = (A → LCA) + (LCA → B)
-
-  *** This is a real technique worth knowing, but it's O(n²) and overkill for this problem.
-	***
-	*** Learn this technique for the interview, but don't use it for this problem.
-	***
+Easiest win: Count Good Nodes In Binary Tree
+Simple DFS: pass a max value down, compare at each node. Good warm-up and quick.
+Very common in interviews: Kth Smallest Element In a BST
+In-order traversal (recursive or iterative); once you see “BST + kth smallest” → in-order, it’s straightforward.
+If you want a bit more: Binary Tree Right Side View
+Like level-order but only keep the last node per level. Reuses the BFS/level-order idea.
